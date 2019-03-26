@@ -1,0 +1,12 @@
+
+{# Set up VirtualHosts #}
+{% for vhost in apache_vhosts %}
+
+<VirtualHost {{ vhost.apache2_listen_ip }}:{{ vhost.apache2_listen_port }}>
+ ServerName {{ vhost.servername }}
+  DocumentRoot "{{ vhost.documentroot }}"
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+{% endfor %}

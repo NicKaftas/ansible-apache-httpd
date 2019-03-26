@@ -1,0 +1,6 @@
+- hosts: apacheserver
+  become: yes
+  vars:
+   domain: "192.168.56.102"
+  roles:
+   - apache

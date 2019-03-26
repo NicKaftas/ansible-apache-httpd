@@ -1,0 +1,10 @@
+---
+
+    - name: create vhost directory
+      file:
+       path: "{{ item.documentroot }}"
+       state: "directory"
+      with_items:
+       - "{{ apache_vhosts }}"
+      notify:
+      - restart apache2

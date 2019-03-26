@@ -1,0 +1,9 @@
+---
+
+    - name: create virtual port file
+      template: 
+       src: "/etc/ansible/roles/apache/templates/ports.conf.j2"
+       dest: "/etc/apache2/ports.conf"
+      notify:
+      - restart apache2
+...
